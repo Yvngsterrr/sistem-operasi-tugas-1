@@ -31,24 +31,24 @@
 
 ## 2. Analisis Mount Point `/` (Root)
 
-**Pertanyaan:** Analisislah kenapa saat instalasi perlu dipilih `/` pada opsi Mount Point?
+**Pertanyaan:** Analisislah pada gambar kenapa saat instalasi perlu dipilih “/” pada opsi Mount Point ?
 
 **Jawaban:**  
-Simbol `/` merepresentasikan direktori akar (root directory) dalam hirarki sistem berkas Linux. Tidak seperti Windows yang membagi partisi menjadi drive letter terpisah (`C:`, `D:`, dsb.), Linux mengorganisasi seluruh direktori dan partisi ke dalam satu struktur hierarki pohon tunggal. Direktori `/` bertindak sebagai batang utama (base of the tree). Seluruh berkas sistem operasi esensial, pustaka (libraries), konfigurasi sistem, dan titik kait direktori lainnya harus berada di bawah `/`. Tanpa partisi yang diarahkan ke `/`, sistem Linux tidak memiliki landasan untuk menyimpan sistem operasi dan tidak akan dapat melakukan proses booting.
+the symbol “/” is like a directory. On windows, they use drive C: or D: but in linux, it install on a single giant tree. “/” is like a trunk the base of the tree.
 
 ---
 
-## 3. Penjelasan Jenis Sistem Berkas (Filesystem)
+## 3. Berikan penjelasan tentang ext4, ext3, swap, ntfs, fat32,btrfs !
 
-- **ext4 (Extended Filesystem 4)**:  
-  Sistem berkas standar dan default pada distribusi modern Linux/Ubuntu. Memiliki performa cepat, stabil, dan menggunakan mekanisme *journaling* (pencatatan transaksi aktif) untuk mencegah kerusakan berkas jika terjadi mati listrik secara tiba-tiba.
-- **ext3 (Extended Filesystem 3)**:  
-  Generasi pendahulu dari ext4. Merupakan versi pertama keluarga ext yang memperkenalkan fitur *journaling*, namun memiliki batasan ukuran berkas/partisi yang lebih kecil serta kecepatan transaksi yang lebih lambat dibanding ext4.
-- **swap (Swap Space)**:  
-  Ruang cadangan pada media penyimpanan (hard drive/SSD) yang difungsikan sebagai memori virtual. Jika memori fisik (RAM) penuh, Linux memindahkan data atau proses yang tidak aktif ke dalam swap agar sistem terhindar dari kondisi *out-of-memory* atau freeze.
-- **NTFS (New Technology File System)**:  
-  Sistem berkas standar utama sistem operasi Microsoft Windows. Mendukung partisi berkapasitas besar, pengaturan hak akses berkas (ACL), enkripsi, dan kompresi berkas.
-- **FAT32 (File Allocation Table 32)**:  
-  Sistem berkas universal yang didukung secara luas oleh Windows, macOS, Linux, televisi, maupun konsol game. Batasan utamanya adalah tidak mendukung ukuran satu berkas lebih dari 4 GB.
-- **btrfs (B-Tree File System)**:  
-  Sistem berkas modern berbasis *copy-on-write* (CoW) untuk Linux. Mendukung fitur canggih seperti *snapshot* (pencadangan instan titik waktu), *subvolume*, *pooling* media penyimpanan, serta kemampuan *self-healing* untuk mendeteksi dan memperbaiki data yang korup.
+ext4 (Extended Filesystem 4):
+•	The default, standard format used by modern Linux/Ubuntu. It is fast, stable, and uses a "journal" (like an activity diary) so the files is not corrupted when suddenly the power cuts out.
+•  ext3 (Extended Filesystem 3):
+•	The older version of ext4. It was the first version to add the safety diary (journaling), slower and smaller storage limits compared to ext4.
+•  swap (Swap Space):
+•	Its an emergency backup RAM on your hard drive. If the computer runs out of RAM, Linux moves inactive apps into this swap area temporarily so your system does not freeze or crash.
+•  NTFS (New Technology File System):
+•	The standard file system used by Microsoft Windows other than exFAT. It is built for Windows to handle huge files, permissions, and security.
+•  FAT32 (File Allocation Table 32):
+•	The universal format used by almost all USB thumb drives and SD cards. All device such as Windows, Mac, Linux, TVs and consoles can read it. However, it cannot store single file larger than 4 GB.
+•  btrfs (B-Tree File System):
+•	A modern, high-tech Linux file system. It has advanced features like "snapshots" like a undo page or rewind if something breaks and self-healing for corrupted data.
